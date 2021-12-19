@@ -193,6 +193,7 @@ module.exports = class Giveaway {
          const timeTook = `${(timeout / 1000).toFixed(0)} second(s)`;
          const channel = await hoster.createDM(true);
 
+         settings.giveaway.dmMessages = [settings.giveaway.dmMessages]
          let messages = settings.giveaway.dmMessages[Math.floor(Math.random() * settings.giveaway.dmMessages.length)];
 
          const success = await new Promise(async (fulfill) => {
