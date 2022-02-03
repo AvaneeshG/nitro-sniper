@@ -7,7 +7,7 @@
       "start": "node ."
    },
    "engines": {
-      "node": "14.x"
+      "node": "17.x"
    },
    "dependencies": {
       "@discordjs/uws": "^10.149.0",
