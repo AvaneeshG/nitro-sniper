@@ -13,9 +13,12 @@ module.exports = class Giveaway {
             enabled,
             delay,
             whitelistOnly,
+            whiteListedChannels,
             whitelistedWords,
+            WLChannelsNames,
             blacklistedWords,
             blacklistedServers,
+            BLChannelNames,
             whitelistedServers,
             whitelistServersOnly
          }
@@ -31,9 +34,14 @@ module.exports = class Giveaway {
          if (whitelistServersOnly) {
             if (!whitelistedServers.includes(msg.guild.id)) return;
          }
+         if (whiteListedChannels) {
+            if (!WLChannelNames.includes(msg.channel.name.toLowerCase())) return;
+         }
 
          // Check for blacklisted servers
          if (blacklistedServers.includes(msg.guild.id)) return;
+
+         if (BLChannelNames.includes(msg.channel.name.toLowerCase())) return;
 
          if (msg.content.includes('**GIVEAWAY**') && msg.content.includes(':yay:')) {
             const embed = msg.embeds[0];
